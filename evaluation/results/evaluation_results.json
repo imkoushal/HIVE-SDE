@@ -1,0 +1,1053 @@
+{
+  "pipeline": {
+    "intent": {
+      "accuracy": 0.63,
+      "macro_f1": 0.5062,
+      "weighted_f1": 0.673,
+      "per_class": {
+        "account_access": {
+          "precision": 0.4,
+          "recall": 1.0,
+          "f1": 0.5714,
+          "support": 2.0
+        },
+        "billing_purchase": {
+          "precision": 0.6667,
+          "recall": 0.5,
+          "f1": 0.5714,
+          "support": 4.0
+        },
+        "feedback_complaint": {
+          "precision": 0.4571,
+          "recall": 0.5926,
+          "f1": 0.5161,
+          "support": 27.0
+        },
+        "how_to": {
+          "precision": 0.2564,
+          "recall": 0.6667,
+          "f1": 0.3704,
+          "support": 15.0
+        },
+        "other": {
+          "precision": 0.1429,
+          "recall": 0.4,
+          "f1": 0.2105,
+          "support": 5.0
+        },
+        "service_status": {
+          "precision": 0.4286,
+          "recall": 0.75,
+          "f1": 0.5455,
+          "support": 4.0
+        },
+        "technical_issue": {
+          "precision": 0.9381,
+          "recall": 0.6364,
+          "f1": 0.7583,
+          "support": 143.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          16,
+          1,
+          3,
+          1,
+          6
+        ],
+        [
+          1,
+          0,
+          0,
+          10,
+          3,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          3,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          3,
+          0
+        ],
+        [
+          2,
+          0,
+          16,
+          28,
+          5,
+          1,
+          91
+        ]
+      ],
+      "labels": [
+        "account_access",
+        "billing_purchase",
+        "feedback_complaint",
+        "how_to",
+        "other",
+        "service_status",
+        "technical_issue"
+      ],
+      "true_distribution": {
+        "technical_issue": 143,
+        "billing_purchase": 4,
+        "feedback_complaint": 27,
+        "how_to": 15,
+        "other": 5,
+        "account_access": 2,
+        "service_status": 4
+      },
+      "pred_distribution": {
+        "technical_issue": 97,
+        "feedback_complaint": 35,
+        "other": 14,
+        "account_access": 5,
+        "how_to": 39,
+        "billing_purchase": 3,
+        "service_status": 7
+      }
+    },
+    "escalation": {
+      "accuracy": 0.705,
+      "precision": 0.5221,
+      "recall": 0.9219,
+      "f1": 0.6667,
+      "tp": 59,
+      "fp": 54,
+      "fn": 5,
+      "tn": 82,
+      "true_escalation_rate": 0.32,
+      "predicted_escalation_rate": 0.565
+    },
+    "reply_quality": {
+      "helpfulness": {
+        "mean": 4.26,
+        "std": 0.74
+      },
+      "tone": {
+        "mean": 4.38,
+        "std": 0.69
+      },
+      "groundedness": {
+        "mean": 4.68,
+        "std": 0.55
+      },
+      "overall": {
+        "mean": 4.44,
+        "std": 0.61
+      },
+      "n_judged": 50
+    },
+    "reply_scores_per_example": [
+      {
+        "helpfulness": 5,
+        "tone": 5,
+        "groundedness": 5,
+        "overall": 5.0,
+        "reasoning": "The AI-generated reply directly addresses the issue, provides clear next steps (updating iOS), and maintains a professional and empathetic tone. It is also factually grounded as it suggests updating the software to resolve the problem. All dimensions score 5 out of 5, resulting in an overall score of 5.0.",
+        "query": "\u201cI\ufe0f\u201d is an emoji now in my phone naw that didn\u2019t fix anything",
+        "generated_reply": "Dear Customer, we understand how frustrating this issue can be. To resolve the autocorrect issues with the letter 'I' emoji, please update your iOS to the latest version: [URL]. If the problem still persists after the update, kindly provide more details by replying directly to...",
+        "index": 163
+      },
+      {
+        "helpfulness": 5,
+        "tone": 5,
+        "groundedness": 5,
+        "overall": 5.0,
+        "reasoning": "The AI-generated reply provides clear actionable steps (Direct Message and sharing details), maintains a professional and empathetic tone, and is factually grounded as it instructs the customer to provide specific information and engage in further communication.",
+        "query": "get y\u2019alls\u2019 life and fix these bugs!\ud83d\ude21\ud83d\udc4a\ud83c\udffe",
+        "generated_reply": "Dear customer, we understand your frustration and apologize for any inconvenience the issues might be causing you. To help resolve your concerns, please send us a Direct Message with specific details about the bugs you're experiencing. Our team will investigate and work towards...",
+        "index": 28
+      },
+      {
+        "helpfulness": 4,
+        "tone": 5,
+        "groundedness": 5,
+        "overall": 4.67,
+        "reasoning": "The AI-generated reply scores high on all dimensions. It addresses the issue by asking for more information (model of the iPhone) and provides clear next steps (DM with the iOS version). The tone is warm, empathetic, and professional, matching Apple Support's style. The reply is fully grounded, as it doesn't make false promises or fabricate information, but rather guides the customer to provide necessary details for further assistance.",
+        "query": "i\ufe0f think i\ufe0f fixed my phone maybe",
+        "generated_reply": "Dear customer, we're glad to help! To assist you effectively, kindly send us the model of your iPhone in a direct message, and we'll guide you through the appropriate steps. Stay connected, and your issue will be resolved soon! [URL_0]",
+        "index": 6
+      },
+      {
+        "helpfulness": 5,
+        "tone": 5,
+        "groundedness": 5,
+        "overall": 5.0,
+        "reasoning": "The AI-generated reply directly addresses the issue, provides clear next steps (Direct Message) and maintains a professional and empathetic tone. It is also factually grounded as it asks for more information and doesn't make false promises or hallucinate solutions.",
+        "query": "please get a new update for ios 11.0.3 my iphone7 will explode from the heat and battery drain.",
+        "generated_reply": "Dear customer, we understand how frustrating this issue must be, and we're here to help! To better assist you, kindly send us a Direct Message with more details about the problems you're experiencing with iOS 11.0.3 on your iPhone 7 Plus. Once we have that information, we'll do...",
+        "index": 189
+      },
+      {
+        "helpfulness": 4,
+        "tone": 4,
+        "groundedness": 4,
+        "overall": 4.0,
+        "reasoning": "The AI-generated reply scores high on helpfulness (5), tone (5), and groundedness (5). It addresses the issue, provides clear next steps (DMing the details), and doesn't fabricate information. The historical reply also scores high on these dimensions. However, it lacks a professional support tone and doesn't mention the customer's problem with the cracked phone. Therefore, the overall score is the average of the AI-generated response scores (4.25).",
+        "query": "Deadass dropped my phone .00005 cm and got a huge crack across the phone... thanks",
+        "generated_reply": "Dear customer, I'm truly sorry to hear about your issue. Let's work together to address this. Please DM us the details of your situation, including your phone model and purchase information. Our team will guide you through the appropriate steps for support. Have a great day! \ud83d\udcf1\ud83d\udcbb",
+        "index": 70
+      },
+      {
+        "helpfulness": 4,
+        "tone": 4,
+        "groundedness": 5,
+        "overall": 4.33,
+        "reasoning": "The AI-generated reply scores high in all dimensions. It is helpful (directly addressing the issue and providing clear steps), has a warm and empathetic tone (using 'Empathetic' and 'We understand'), and is grounded as it refers to Apple Support resources. The overall rating is an average of the three dimensions scores.",
+        "query": "I need to recover my appleId, I am putting it in recovery from last 3 times, wait for 4 days but every time it looses status and ask me to put it in recovery again. Can I get my appleID deleted so that i can make a new one?",
+        "generated_reply": "Customer, I understand how frustrating this situation can be. To resolve your Apple ID recovery issues, please follow these steps: [URL] If you still face problems after trying this, kindly DM us with your issue details and contact information. We'll be glad to assist you further. \ud83d\ude0a",
+        "index": 62
+      },
+      {
+        "helpfulness": 5,
+        "tone": 5,
+        "groundedness": 5,
+        "overall": 5.0,
+        "reasoning": "The AI-generated reply directly addresses the issue, provides clear next steps (DM with Mac model and [URL]), and maintains a professional and empathetic tone. It is fully grounded as it instructs the customer to provide more information and offers a clear solution (data recovery via [URL]). The reply scores 5 in all three dimensions.",
+        "query": "Called to fix my Mac software problem, technician erased all my data. #needmydataback",
+        "generated_reply": "Dear Customer, we apologize for the inconvenience you're facing. To better assist you, please DM us the model of your Mac, and we'll guide you through the necessary steps to resolve the issue. Rest assured, we'll do our best to recover your data and ensure your Mac's smooth functioning. [URL]",
+        "index": 57
+      },
+      {
+        "helpfulness": 4,
+        "tone": 4,
+        "groundedness": 4,
+        "overall": 4.0,
+        "reasoning": "The AI-generated reply scores high in all dimensions. It addresses the issue (5), has a warm, empathetic tone (5), and is factually grounded (5). Although the reply doesn't directly mention the upgrade or UTC timezone, it is still a reasonable response considering the customer's message is fragmented and not focused on these aspects. The overall score is an average of the three scores (4.25), reflecting a good performance.",
+        "query": "my #iphone5s repair cost me $200+ ask for upgrade 2#iphone6 2 #UTC #SanDiego dey refuse 2take d phone says cant recycle has small display issue message clear once #iphone dies apple wont care #2enduser ?",
+        "generated_reply": "Dear customer, we apologize for any inconvenience you're facing with your iPhone 5s. To assist you effectively, please DM us the following information: 1) iPhone model and 2) the battery charging frequency during the day. We'll gladly guide you through the appropriate steps. [URL_0]",
+        "index": 35
+      },
+      {
+        "helpfulness": 4,
+        "tone": 4,
+        "groundedness": 5,
+        "overall": 4.33,
+        "reasoning": "The AI-generated reply scores high in helpfulness (4), tone (4), and groundedness (5), as it addresses the issue, provides a clear workaround, and maintains a professional and empathetic tone. Although the historical reply from Apple Support is better (5 for tone and groundedness), the AI-generated response is more concise and easier to understand for a non-expert customer.",
+        "query": "Idk what\u2019s taking so long to fix this \u201cI\u201d situation",
+        "generated_reply": "Dear customer, we apologize for any inconvenience the \"I\" situation has caused you. To help you navigate until the update, please try resetting your device's settings: 1. Backup your data, 2. Go to Settings > General > Reset, and 3. Tap \"Reset All Settings.\" If you still need...",
+        "index": 188
+      },
+      {
+        "helpfulness": 4,
+        "tone": 4,
+        "groundedness": 5,
+        "overall": 4.33,
+        "reasoning": "The AI-generated reply addresses the issue by asking for more information and providing clear next steps (DMing with details). It scores 4/5 in helpfulness. The tone is warm and empathetic, scoring 4.5/5. The reply is fully grounded, scoring 5/5. The overall rating is the average of these scores (4.25/5), considering both helpfulness and tone.",
+        "query": "I recently updated my iphone x to ios 11.1.1. After installation and rebooting, the screen is no longer responsive. I've already tried hard reboot, downgrade to ios 11.1 but still no luck. NEED HELP ASAP :)",
+        "generated_reply": "Dear customer, we understand how frustrating this issue must be. To better assist you, kindly DM us with the following information: 1) When did the problem start occurring? 2) Are there specific apps causing the issue? Providing this information will help us guide you through...",
+        "index": 26
+      },
+      {
+        "helpfulness": 4,
+        "tone": 4,
+        "groundedness": 4,
+        "overall": 4.0,
+        "reasoning": "The AI-generated reply scores well on all dimensions. It addresses the issue (by asking for specific details), has a warm and professional tone, and is factually grounded without making up solutions or false promises. The overall rating is an average of the three scores (helpfulness, tone, and groundedness), which results in 4.25 out of 5.",
+        "query": "fix yourself! I am not buying a new phone",
+        "generated_reply": "Dear customer, we truly understand your frustration and apologize for the inconvenience you're facing. To better assist you, please DM us your iPhone model, iOS version, and the specific issues you're experiencing. We're here to help resolve them and ensure your satisfaction. [URL_0",
+        "index": 173
+      },
+      {
+        "helpfulness": 5,
+        "tone": 5,
+        "groundedness": 5,
+        "overall": 5.0,
+        "reasoning": "The AI-generated reply scores highly on all dimensions. It addresses the issue directly, provides clear next steps (DMing details), and presents a warm, empathetic, and professional tone, similar to Apple Support. The reply is also grounded, providing accurate information and suggesting appropriate action.",
+        "query": "this glitch when we type \u201cI\u201d and turns into this \u201cI\ufe0f\u201d \u2014 can y\u2019all fix that?",
+        "generated_reply": "Dear customer, we appreciate you bringing this to our attention. To assist you effectively, please DM us your device model and iOS version. Rest assured, we're working on resolving such issues, and your feedback helps us prioritize improvements. Stay tuned for updates! \ud83d\udcf2\ud83d\udcbb",
+        "index": 139
+      },
+      {
+        "helpfulness": 3,
+        "tone": 4,
+        "groundedness": 4,
+        "overall": 3.67,
+        "reasoning": "The AI-generated reply (2nd response) scores higher in tone (4) and groundedness (4) as it maintains a professional tone and offers a factual solution by guiding the customer to recover files. However, it scores lower in helpfulness (3) as it doesn't directly address the issue with opening the Finder application. The 'overall' score (3.67) is an average of the three scores.",
+        "query": "my finder application does not open and all the stuff i had on my desktop has suddenly vanished.",
+        "generated_reply": "Dear customer, I'm sorry to hear you're experiencing issues with your device. Let's try recovering your missing files by following these steps: 1) Check if they are in Trash. 2) Try searching for them using Spotlight (press Command + Space, type 'Spotlight search', and search...",
+        "index": 22
+      },
+      {
+        "helpfulness": 5,
+        "tone": 5,
+        "groundedness": 5,
+        "overall": 5.0,
+        "reasoning": "The AI-generated reply effectively addresses the customer's issue, provides clear next steps (DM), and maintains a warm, empathetic tone while being factually grounded. All dimensions score highly, resulting in an overall 5.0/5.0 rating.",
+        "query": "iOS 11.x.x releases make me feel back to androids again. Bugs after bugs :/",
+        "generated_reply": "Dear customer, we understand how frustrating bugs can be, and we're here to assist you. To better help you, kindly DM us with the specific issues you're encountering, and our team will guide you through possible solutions. Stay calm, and we'll get your experience back to its smooth iOS glory. \ud83e\udd17\ud83d\udcf1",
+        "index": 151
+      },
+      {
+        "helpfulness": 4,
+        "tone": 4,
+        "groundedness": 5,
+        "overall": 4.33,
+        "reasoning": "The AI-generated reply scores high in helpfulness (addresses the issue, provides clear next steps) with a helpfulness score of 4. The tone is also appropriate, empathetic, and professional (5). The reply is fully grounded and suggests an appropriate action (5). The overall score is the average of these scores (4.5).",
+        "query": "Honestly my stupid phone is killing me! sort out this fix update immediately if not sooner [URL]",
+        "generated_reply": "Dear customer, I understand how frustrating this issue must be for you. Please try restarting your iPhone, as that often resolves the keyboard disappearing problem. If the issue persists, let's focus on finding a solution together. Kindly provide more details about the problem...",
+        "index": 108
+      },
+      {
+        "helpfulness": 5,
+        "tone": 5,
+        "groundedness": 5,
+        "overall": 5.0,
+        "reasoning": "The AI-generated reply effectively addresses the customer's issue by recommending the correct product (iPhone SE) and providing a clear next step (viewing the product page). The tone is warm, empathetic, and professional, matching Apple Support's style. The reply is factually grounded, providing a direct and accurate solution without making up information or false promises.",
+        "query": "hello I do not find on your website an iphone x as big as an iPhone SE? #littlehands",
+        "generated_reply": "Customer: hello I do not find on your website an iphone x as big as an iPhone SE? #littlehands\n\nBrand response: Dear customer, we understand your preference for a smaller device. You can find the iPhone SE here: [URL]. If you have further questions, please feel free to ask. \ud83d\udcf2\ud83d\udcac",
+        "index": 8
+      },
+      {
+        "helpfulness": 5,
+        "tone": 5,
+        "groundedness": 5,
+        "overall": 5.0,
+        "reasoning": "The AI-generated reply directly addresses the issue, provides clear next steps, and maintains a professional and empathetic tone. It is also factually grounded as it suggests specific actions (restarting the device or resetting all settings) to resolve the problem. These factors contribute to an overall score of 5.",
+        "query": "why is \u201cI\ufe0f\u201d not working ?",
+        "generated_reply": "Dear customer, I understand your concern regarding the \"I\ufe0f\" issue. To resolve this, please follow these steps:\n\n1. Restart your device by holding down the Power button for a few seconds.\n2. If that doesn't work, try resetting all settings (Settings > General > Reset > Reset All...",
+        "index": 7
+      },
+      {
+        "helpfulness": 4,
+        "tone": 4,
+        "groundedness": 5,
+        "overall": 4.33,
+        "reasoning": "The AI-generated reply scores highly in helping the customer (4/5) by providing clear next steps (rebooting the device), and it has a professional tone (4.5/5) that addresses the issue appropriately. It is also factually grounded (5/5) as it suggests a specific action to resolve the problem. The overall score (4.25/5) is the average of these scores.",
+        "query": "Dear your iOS update 11.2 broke my visual voicemail. [URL]",
+        "generated_reply": "Dear Customer, we apologize for any inconvenience caused by the iOS update. To resolve the issue with your Visual Voicemail, please try restarting your iPhone. If the problem persists, kindly provide us with your device model and the specific steps to reproduce the issue at...",
+        "index": 23
+      },
+      {
+        "helpfulness": 4,
+        "tone": 4,
+        "groundedness": 4,
+        "overall": 4.0,
+        "reasoning": "The AI-generated reply scores high in all dimensions. It addresses the issue (helpfulness), maintains a professional and empathetic tone (tone), and is grounded as it asks for more information and guides the customer through troubleshooting steps. The overall score is the average of the three scores (4.25), indicating a good customer support response.",
+        "query": "i just got the iphone 8 plus last week &amp; it\u2019s freezing so much... wtf.. a $900 phone should not be freezing this much..",
+        "generated_reply": "Dear customer, we understand how frustrating it can be when your device isn't performing as expected. To assist you effectively, please provide us with the iOS version by going to Settings > General > About. Once we have that information, we can guide you through troubleshooting...",
+        "index": 55
+      },
+      {
+        "helpfulness": 5,
+        "tone": 5,
+        "groundedness": 5,
+        "overall": 5.0,
+        "reasoning": "The AI-generated reply directly addresses the issue by guiding the customer to check the settings and provides clear next steps. It scores high in Helpfulness (5), Tone (5), and Groundedness (5). The reply seems professional, empathetic, and factually accurate, making it an excellent response.",
+        "query": "So the new iOS11 feature that stops apps from requesting rating reviews is working great. And by that I mean #notworkingatall",
+        "generated_reply": "Dear customer, we understand how frustrating this must be. To troubleshoot, please make sure you've updated your iPhone to the latest version of iOS. If the issue persists, kindly send us a direct message with your contact information and device details, and our team will be...",
+        "index": 59
+      },
+      {
+        "helpfulness": 4,
+        "tone": 4,
+        "groundedness": 4,
+        "overall": 4.0,
+        "reasoning": "The AI-generated reply scores high on Helpfulness (4/5), Tone (4.5/5), and Groundedness (4.5/5). It addresses the issue, provides clear next steps, and is factually grounded without making false promises. The overall score (4.25/5) is an average of these scores.",
+        "query": "nice to have a new visual update to the Apple Support app. Just a shame I still can\u2019t actually get connected to Apple Support (it\u2019s NEVER worked for me, since launch). [URL]",
+        "generated_reply": "Dear customer, we apologize for any frustration you've experienced with the Apple Support app. Let's resolve this issue together. Please DM us with the following information: iPhone model and whether you've updated to iOS 11.1. We're here to help! \ud83d\udcf2\ud83d\udcf1 [URL]",
+        "index": 129
+      },
+      {
+        "helpfulness": 3,
+        "tone": 4,
+        "groundedness": 4,
+        "overall": 3.67,
+        "reasoning": "The AI-generated reply scores moderately well. It addresses the issue (3/5) by suggesting to update the iOS and provides clear next steps (5/5). The tone is warm and empathetic (4/5). The reply is factually grounded (4/5) as it provides clear instructions on updating the iOS and restarting the device. However, the reply doesn't directly address the original issue of being identified as 'driving' and doesn't mention checking the 'Do Not Disturb' settings. Therefore, the overall score is 3.75.",
+        "query": "Just connected to a Bluetooth speaker and my phone thinks I\u2019m driving. Why? What types of devices are looking for when they invoke Safe Driving.",
+        "generated_reply": "Hello! To resolve the issue with your Bluetooth connection, please update your iOS to the latest version by going to Settings > General > Software Update. After the update is complete, restart both your device and car, and check if the problem persists. If you still experience...",
+        "index": 154
+      },
+      {
+        "helpfulness": 4,
+        "tone": 4,
+        "groundedness": 5,
+        "overall": 4.33,
+        "reasoning": "The AI-generated reply scores high on Helpfulness (4/5), Tone (4.5/5), and Groundedness (5/5). It addresses the issue, provides a clear next step (contact Sales team), and is factually grounded. The overall score (4.25/5) is the average of these scores.",
+        "query": "if i\u2019m pre ordering the iPhone X would i have to pre order it from my carrier company to pay for it w a plan and not all at once?",
+        "generated_reply": "Dear customer, thank you for your inquiry about purchasing the iPhone X. To ensure you receive the correct guidance, please contact our Sales Support team at the following link: [URL]. They will assist you in choosing the suitable option based on your needs and location. Happy to help! \ud83d\udcf2\ud83d\udcbb",
+        "index": 197
+      },
+      {
+        "helpfulness": 5,
+        "tone": 5,
+        "groundedness": 5,
+        "overall": 5.0,
+        "reasoning": "The AI-generated reply directly addresses the issue, provides clear next steps (restarting the iPhone), and maintains a professional and empathetic tone. It is also factually grounded, offering a specific solution to the problem. These factors contribute to an overall score of 5.",
+        "query": "please my iphone can't activate i tried more than 100 times what could wrong it started after resorting to put a new account",
+        "generated_reply": "Dear customer, we understand how frustrating this issue might be. To resolve your activation problem, please follow these steps:\n\n1. Restart your iPhone: Press and hold the Side button until \"Slide to Power Off\" appears, then slide it. After the device turns off, press the Side...",
+        "index": 143
+      },
+      {
+        "helpfulness": 4,
+        "tone": 4,
+        "groundedness": 5,
+        "overall": 4.33,
+        "reasoning": "The AI-generated reply scores high on helpfulness (provides clear steps to resolve the issue) and groundedness (factually accurate suggestions). While the tone is also good (professional and warm), it doesn't match the Apple Support style perfectly. Therefore, the overall score is an average of these three dimensions.",
+        "query": "fix ur shit i\u2019m tired of typing i\ufe0f and boxes coming up",
+        "generated_reply": "Dear customer, we understand your frustration and apologize for the inconvenience. To resolve the issue, kindly follow these steps: 1. Restart your device, 2. Update your software, and 3. Check for keyboard settings. If the problem persists, please feel free to DM us for further...",
+        "index": 50
+      },
+      {
+        "helpfulness": 5,
+        "tone": 5,
+        "groundedness": 5,
+        "overall": 5.0,
+        "reasoning": "The AI-generated reply scores highly on all dimensions. It addresses the issue directly, provides clear next steps (DM for personalized help), and does not fabricate information or make false promises. It maintains a professional and empathetic tone, similar to a human support agent.",
+        "query": "PLEASE FIX THIS I\ufe0f BUG \ud83e\udd26\ud83c\udffd\u2642\ufe0f\ud83d\ude2c\ud83e\udd28#ATLvsCAR",
+        "generated_reply": "Dear customer, we understand your frustration with the I\ufe0f issue you're experiencing. To help you continue using your device until we release a software update, please try this workaround: [URL]. If you need further assistance, feel free to DM us for personalized help. [URL]",
+        "index": 166
+      },
+      {
+        "helpfulness": 4,
+        "tone": 4,
+        "groundedness": 5,
+        "overall": 4.33,
+        "reasoning": "The AI-generated reply scores high in helping the customer (4/5) by providing clear next steps (trying a restart) and addressing the issue directly. It has a professional tone (4/5) and is grounded as it suggests a real solution. The overall score (4.5/5) is the average of these scores.",
+        "query": "Why does my iPhone 7 create a question mark every time I\ufe0f use the letter \u201cI\ufe0f\u201d ughhh",
+        "generated_reply": "Hello! I understand how frustrating that can be. To resolve the issue with the letter 'I' showing as 'A followed by a question mark', try restarting your iPhone 7. If the problem persists, kindly provide the iOS version by replying with the following text: \"Apple Support, please...",
+        "index": 191
+      },
+      {
+        "helpfulness": 4,
+        "tone": 5,
+        "groundedness": 5,
+        "overall": 4.67,
+        "reasoning": "The AI-generated reply addresses the customer's issue with AirDrop not working and provides clear next steps (turn off 'Find My [device]' toggle). It also has a warm, empathetic tone and is factually grounded as it suggests checking the device version and providing more assistance based on that information.",
+        "query": "i have an issue with ios11 iphone6s not \u2018seeing\u2019 imac in airdrop. Apparently im not alone. Is there a fix?",
+        "generated_reply": "Dear Customer, we understand your concern about not being able to use AirDrop between your iPhone X and another iPhone X. To help resolve this issue, please ensure that both devices have the 'Find My [device]' toggle turned off in Settings > [device name] > iCloud. If that...",
+        "index": 107
+      },
+      {
+        "helpfulness": 3,
+        "tone": 3,
+        "groundedness": 4,
+        "overall": 3.33,
+        "reasoning": "The AI-generated reply (2nd response) provides a clear next step (DMing questions) and has a neutral tone. It is somewhat helpful but could be improved by addressing the issue more directly. The reply is grounded as it suggests a factual solution. The overall rating is 3.33 (3 for tone and groundedness, 2 for helpfulness).",
+        "query": "Happy birthday to one of my besties!!!!! Love you",
+        "generated_reply": "Dear customer, happy birthday in advance! We're glad you reached out. To assist you better, please try the steps in this guide and DM us the details: [URL]. If the issue persists, we're here to help. Happy birthday and have a great day! \ud83c\udf89\ud83c\udf81\ud83c\udf82",
+        "index": 56
+      },
+      {
+        "helpfulness": 5,
+        "tone": 5,
+        "groundedness": 5,
+        "overall": 5.0,
+        "reasoning": "The AI-generated reply effectively addresses the customer's issue, provides clear next steps (DM with device information), and maintains a professional and empathetic tone. It is also factually grounded as it guides the customer to provide more information for precise assistance.",
+        "query": "11.03 is making my phone super buggy. Glitchy. Apps crashing. Screen going blank. Unresponsive touch.",
+        "generated_reply": "Dear customer, we understand how frustrating these issues can be. To better assist you, please DM us the model of your iPhone, as well as any error messages displayed. We'll guide you through troubleshooting steps to help resolve the problems you're experiencing. Stay connected...",
+        "index": 114
+      },
+      {
+        "helpfulness": 4,
+        "tone": 5,
+        "groundedness": 5,
+        "overall": 4.67,
+        "reasoning": "The AI-generated reply addresses the issue, provides clear next steps (asking for device model and restarting the device), and maintains a professional and empathetic tone. It is factually grounded as it asks for specific information to help resolve the problem. The overall rating is the average of the three scores: (4 + 5 + 5) / 3 = 4.5",
+        "query": "My iphone SE is now on IOS 11.02 and often slows down/freezes. Switches to/from data/wifi and loses wifi password #ios11update",
+        "generated_reply": "Dear customer, we understand your frustration with the issues you've been experiencing with iOS 11.1.2 on your iPhone SE. To assist you effectively, please provide the following information:\n\n1. What is the exact model of your iPhone SE?\n2. Have you tried restarting your device?...",
+        "index": 150
+      },
+      {
+        "helpfulness": 4,
+        "tone": 4,
+        "groundedness": 5,
+        "overall": 4.33,
+        "reasoning": "The AI-generated reply addresses the issue by providing clear next steps (update the device) and has a professional tone. It scores higher in helpfulness, groundedness, and overall. While the provided historical reply from Apple Support is more empathetic and matches their style, the AI-generated response is still adequate and provides a clear solution.",
+        "query": "The random capitalization of words like \u201cflight\u201d and \u201cgate\u201d is super annoying . *see attached [URL]",
+        "generated_reply": "Dear Customer, we apologize for any inconvenience the random capitalization might be causing you. To resolve this issue, please update your device to the latest version of iOS by following these steps: [URL]. If the problem persists, kindly provide more details by replying with...",
+        "index": 71
+      },
+      {
+        "helpfulness": 5,
+        "tone": 5,
+        "groundedness": 5,
+        "overall": 5.0,
+        "reasoning": "The AI-generated reply effectively addresses the issue, provides clear next steps (requiring the customer to private message), and maintains a professional and empathetic tone. It is also factually grounded as it asks for more information and guides the customer through troubleshooting.",
+        "query": "Thanks to IOS 11 my phone is a Payphone because I have it on the charger 20 hours a day fuck you",
+        "generated_reply": "Customer, we truly understand how frustrating this situation must be for you. Please private message us with your iPhone model, and we'll guide you through troubleshooting steps to resolve the charging issue with iOS 11. Rest assured, we're here to help and get your device back...",
+        "index": 1
+      },
+      {
+        "helpfulness": 4,
+        "tone": 4,
+        "groundedness": 5,
+        "overall": 4.33,
+        "reasoning": "The AI-generated reply scores well on all dimensions. It addresses the issue by guiding the customer to DM the brand and provides clear next steps. The tone is empathetic and professional, matching Apple Support's style. The reply is fully grounded, suggesting appropriate action (DMing the brand) without making false promises or being vague.",
+        "query": "send help because ever since I updated my phone it is trash. Straight trash. After I post this and switch apps. I\u2019ll have to reset",
+        "generated_reply": "Dear customer, we understand how frustrating this issue might be. To assist you effectively, please kindly DM us with your contact information and a brief description of the problem you're experiencing. Rest assured, we'll do our best to help and resolve any concerns you have....",
+        "index": 40
+      },
+      {
+        "helpfulness": 4,
+        "tone": 4,
+        "groundedness": 5,
+        "overall": 4.33,
+        "reasoning": "The AI-generated reply scores high in helping the customer (4/5) by addressing the issue and providing clear next steps. The tone (4.5/5) is warm, empathetic, and professional. It is fully grounded (5/5) as it asks for specific information to guide the solution. The overall score (4.25/5) is an average of these scores.",
+        "query": "Apple really out here making me think my phone bout to stop working with the constant crashing of apps and my phone just going black at random intervals in the day ... GET YOUR LIFE",
+        "generated_reply": "Dear customer, we understand how frustrating it can be when your device experiences issues. To assist you effectively, please confirm if your iPhone is shutting down randomly or if apps are unexpectedly closing. Providing your iOS version will also help guide our solutions....",
+        "index": 185
+      },
+      {
+        "helpfulness": 5,
+        "tone": 5,
+        "groundedness": 5,
+        "overall": 5.0,
+        "reasoning": "All three scores are 5 due to the AI-generated reply directly addressing the issue, providing clear next steps (DM for troubleshooting), and maintaining a professional and empathetic tone while being factually grounded.",
+        "query": "WTF!! this update is BULLSHIT my battery is fkn fried I literally unplug it and it drops to 70% FIX THIS SHIT! #iphone #iosfail #ios1111 #iphonefail",
+        "generated_reply": "Dear Customer, we apologize for any inconvenience the iOS 11 update has caused. To assist you effectively, please DM us with the following information: device model and current iOS version. We'll be glad to guide you through troubleshooting steps. Thank you! \ud83d\udcf2\ud83d\udcbb",
+        "index": 87
+      },
+      {
+        "helpfulness": 3,
+        "tone": 4,
+        "groundedness": 4,
+        "overall": 3.67,
+        "reasoning": "The AI-generated reply scores 3.67 out of 5 due to: Helpfulness - addresses the issue but lacks clear next steps; Tone - warm and empathetic, aligns with Apple Support's style; Groundedness - factually grounded and suggests private messaging for further assistance.",
+        "query": "Still waiting for an iOS update that\u2019ll fix all this nonsense",
+        "generated_reply": "Dear customer, we understand your frustration with the ongoing issues. Kindly private message us with your device details and the specific problems you're experiencing. Our team will gladly assist you in resolving the concerns. Best regards, Apple Support.",
+        "index": 168
+      },
+      {
+        "helpfulness": 5,
+        "tone": 5,
+        "groundedness": 5,
+        "overall": 5.0,
+        "reasoning": "The AI-generated reply clearly addresses the customer's issue, provides actionable next steps (DMing the required information), and maintains a professional and empathetic tone. It is also factually grounded as it asks for specific details to better assist the customer.",
+        "query": "I updated my phone and it\u2019s a hot ass mess now",
+        "generated_reply": "Dear customer, we're truly sorry for the trouble you're experiencing after the update. To better assist you, please DM us the following information: iOS version, iPhone model, and a detailed description of the issues you're facing. Our team will be happy to investigate and guide...",
+        "index": 39
+      },
+      {
+        "helpfulness": 2,
+        "tone": 2,
+        "groundedness": 3,
+        "overall": 2.33,
+        "reasoning": "The AI-generated reply (3) provides a vague solution (updating iOS) and lacks empathy, while the Brand's actual historical reply (5) directly addresses the issue, has a warm tone, and is factually grounded. The AI's score is lower due to its vagueness and lack of empathy.",
+        "query": "I\u2019m wondering if #280characters is twitter\u2019s way of making sure we no longer have Trump tweeting out a terrifying half-sentence and not completing it for another ten minutes as the world waits to see if there\u2019s going to be a nuclear war or not. Okay I\ufe0f used all the characters.",
+        "generated_reply": "Dear customer, we understand your concern about the character limitation on Twitter. Rest assured, Apple prioritizes user experience and safety. To address your issue, please ensure you have the latest iOS version installed. If you haven't updated, kindly go to Settings >...",
+        "index": 181
+      },
+      {
+        "helpfulness": 4,
+        "tone": 4,
+        "groundedness": 4,
+        "overall": 4.0,
+        "reasoning": "The AI-generated reply scores high on helpfulness (addresses the issue and provides actionable next steps), has a warm and professional tone, and is factually grounded without making up solutions or false promises. The overall score is an average of these scores.",
+        "query": "you guys are killing me right now!!!!!!!",
+        "generated_reply": "Customer, we understand your frustration and apologize for any inconvenience. Please DM us with your device details and the issue you're experiencing, so we can assist you promptly. We're here to help! [URL_0",
+        "index": 86
+      },
+      {
+        "helpfulness": 4,
+        "tone": 4,
+        "groundedness": 4,
+        "overall": 4.0,
+        "reasoning": "The AI-generated reply scores well on all dimensions. It addresses the issue (helpfulness: 5), uses a warm and empathetic tone (tone: 5), and is grounded as it asks for more information and guides the customer to resolve the problem (groundedness: 5). The overall score (4.25) is the average of these scores.",
+        "query": "why release an ios that freezes your BRAND NEW phone smh",
+        "generated_reply": "Dear customer, we apologize for any frustration the iOS update has caused you. To better assist you, please provide the model of your iPhone and the current iOS version. Let's discuss this privately in Direct Messages. Thank you!",
+        "index": 190
+      },
+      {
+        "helpfulness": 5,
+        "tone": 5,
+        "groundedness": 5,
+        "overall": 5.0,
+        "reasoning": "The AI-generated reply directly addresses the issue, provides clear next steps, and is factually grounded. It scores 5 in Helpfulness, Tone, and Groundness dimensions. The Overall rating is the average of these scores (5.0).",
+        "query": "Quase todas as minhas fotos sumiram do meu celular mas t\u00e3o no icloud, como recupero isso??",
+        "generated_reply": "Customer, I understand that your photos disappearing from iCloud is causing concern. To better assist you, please check if your iCloud Photos is properly enabled on your iPhone. If not, follow these steps to fix the issue: 1. Go to Settings > Your Name > iCloud; 2. Toggle on...",
+        "index": 182
+      },
+      {
+        "helpfulness": 4,
+        "tone": 4,
+        "groundedness": 4,
+        "overall": 4.0,
+        "reasoning": "The AI-generated reply scores well on all dimensions. It addresses the issue (helpfulness: 5), has a warm and empathetic tone (tone: 5), and provides a clear next step (replying directly to the message) while being factually grounded (groundedness: 5). The overall score is the average of the three scores: (5 + 5 + 5) / 3 = 4.25",
+        "query": "the latest update is a nightmare. Frozen screens not had before. No alerts on emails. Jumping ahead at the slightest touch",
+        "generated_reply": "Dear customer, we understand how frustrating these issues can be. Please provide us with more information by replying directly to this message. Let's work together to identify the problem and find a solution for your device. Thank you for your patience, and we apologize for any...",
+        "index": 97
+      },
+      {
+        "helpfulness": 5,
+        "tone": 5,
+        "groundedness": 5,
+        "overall": 5.0,
+        "reasoning": "The AI-generated reply provides clear, actionable steps (DMing the required information) and addresses the issue directly. It also matches the tone of a professional, empathetic support agent. The reply is factually grounded, offering a solution without making false promises.",
+        "query": "FIX THIS BATTERY ISSUE I\u2019M SICK OF LOSING CHARGE.",
+        "generated_reply": "Dear customer, we understand your frustration with the battery issue, and we're here to assist you. To help resolve this, please DM us the following information: iOS version and your device model. We'll do our best to resolve the problem for you. [URL_0]",
+        "index": 24
+      },
+      {
+        "helpfulness": 5,
+        "tone": 5,
+        "groundedness": 5,
+        "overall": 5.0,
+        "reasoning": "The AI-generated reply effectively addresses the customer's issue, provides clear next steps (Direct Message), and maintains a warm, empathetic, and professional tone. It is also factually grounded, offering assistance without making up solutions. All three dimensions score highly, resulting in an overall score of 5.0.",
+        "query": "my phone was messing up so I turned it off and on and saw that 1000 of my photos have just disappeared?????????? Wtf???? [URL]",
+        "generated_reply": "Dear Customer, we sincerely apologize for the inconvenience you're facing with your photos disappearing. To better assist you, kindly send us a Direct Message with more details about the issue. Our team will guide you through the necessary steps to resolve this matter. [URL]",
+        "index": 91
+      },
+      {
+        "helpfulness": 5,
+        "tone": 5,
+        "groundedness": 5,
+        "overall": 5.0,
+        "reasoning": "All three scores are 5 due to the reply directly addressing the issue, providing clear next steps (Direct Message), and maintaining a warm, empathetic, and professional tone while being fully grounded and not fabricating information.",
+        "query": "Too late sound works 50% of time, apps crashing constantly. #getagrip #Apple !! [URL]",
+        "generated_reply": "Dear Customer, we understand how frustrating this issue must be. To better assist you, kindly send us a Direct Message so we can guide you through troubleshooting steps, including restarting your device. We're here to help resolve this and ensure your Apple experience is smooth...",
+        "index": 88
+      },
+      {
+        "helpfulness": 5,
+        "tone": 5,
+        "groundedness": 5,
+        "overall": 5.0,
+        "reasoning": "All three scores are 5 due to the reply directly addressing the issue, providing clear next steps (private messaging for further assistance), and maintaining a professional, empathetic tone while being fully grounded and not fabricating information.",
+        "query": "You know y\u2019all need to get this keyboard together! It\u2019s like reading hieroglyphics sometimes with this glitch! \ud83d\udc4a\ud83c\udffe",
+        "generated_reply": "Dear customer, we sincerely apologize for the inconvenience caused by the keyboard issue. Let's work together to resolve this. Please private message us with more details about the problem, including your device model and current software version. Our team will assist you...",
+        "index": 67
+      },
+      {
+        "helpfulness": 5,
+        "tone": 5,
+        "groundedness": 5,
+        "overall": 5.0,
+        "reasoning": "The AI-generated reply effectively addresses the customer's issue, provides clear next steps (DMing the requested information), and maintains a professional and empathetic tone. It is also factually grounded as it asks for specific details and suggests a proper course of action (restoring the device). This results in a perfect score across the board.",
+        "query": "I\u2019m disgusted. The 11.0 updates were nothing but viruses! My iPhone 6plus is all messed up. Please help!",
+        "generated_reply": "Dear customer, we apologize for any inconvenience the update has caused. To assist you effectively, please DM us the following details: 1) What issues are you facing with your iPhone 6s Plus? 2) Have you attempted to restore your device? Providing this information will help us...",
+        "index": 11
+      },
+      {
+        "helpfulness": 3,
+        "tone": 3,
+        "groundedness": 3,
+        "overall": 3.0,
+        "reasoning": "The AI-generated reply addresses the issue, provides some guidance, and maintains a professional tone. However, it lacks the specific details and empathy present in Apple Support's responses. The reply is not as effective as the historical response.",
+        "query": "ame della mi spiegate per quale fottuto motivo il mio iPad mini di prima generazione \u00e8 oramai praticamente inutilizzabile? lento e si connette con difficolt\u00e0 a internet. neanche il ripristino ne pone rimedio",
+        "generated_reply": "Customer, we understand how frustrating it can be to experience issues after software updates. To better assist you, please provide your device model and iOS version. Once we have that information, we'll guide you through troubleshooting steps to resolve the issues you're...",
+        "index": 117
+      },
+      {
+        "helpfulness": 3,
+        "tone": 3,
+        "groundedness": 5,
+        "overall": 3.67,
+        "reasoning": "The AI-generated reply scores 3 in Helpfulness as it provides a clear explanation and steps to resolve the issue. The Tone is also rated 3, as it remains professional and factual. The Groundedness is rated 5 for being fully grounded and providing accurate information. The overall score (3.67) is an average of these scores.",
+        "query": "What in the fuck is this I\ufe0f glitch is that like your new thing #iGlitch",
+        "generated_reply": "Dear customer, we apologize for any inconvenience caused by the glitch you're experiencing with the letter 'i'. To help resolve this issue, please follow these steps:\n\n1. Restart your device: Press and hold the Power/Sleep button until \"Slide to Power Off\" appears, then slide it...",
+        "index": 137
+      }
+    ]
+  },
+  "trivial_baseline": {
+    "intent": {
+      "accuracy": 0.715,
+      "macro_f1": 0.1191,
+      "weighted_f1": 0.5962,
+      "per_class": {
+        "account_access": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2.0
+        },
+        "billing_purchase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 4.0
+        },
+        "feedback_complaint": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 27.0
+        },
+        "how_to": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 15.0
+        },
+        "other": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 5.0
+        },
+        "service_status": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 4.0
+        },
+        "technical_issue": {
+          "precision": 0.715,
+          "recall": 1.0,
+          "f1": 0.8338,
+          "support": 143.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          27
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          15
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          143
+        ]
+      ],
+      "labels": [
+        "account_access",
+        "billing_purchase",
+        "feedback_complaint",
+        "how_to",
+        "other",
+        "service_status",
+        "technical_issue"
+      ],
+      "true_distribution": {
+        "technical_issue": 143,
+        "billing_purchase": 4,
+        "feedback_complaint": 27,
+        "how_to": 15,
+        "other": 5,
+        "account_access": 2,
+        "service_status": 4
+      },
+      "pred_distribution": {
+        "technical_issue": 200
+      }
+    },
+    "escalation": {
+      "accuracy": 0.32,
+      "precision": 0.32,
+      "recall": 1.0,
+      "f1": 0.4848,
+      "tp": 64,
+      "fp": 136,
+      "fn": 0,
+      "tn": 0,
+      "true_escalation_rate": 0.32,
+      "predicted_escalation_rate": 1.0
+    }
+  },
+  "simple_baseline": {
+    "intent": {
+      "accuracy": 0.66,
+      "macro_f1": 0.4097,
+      "weighted_f1": 0.6816,
+      "per_class": {
+        "account_access": {
+          "precision": 0.2857,
+          "recall": 1.0,
+          "f1": 0.4444,
+          "support": 2.0
+        },
+        "billing_purchase": {
+          "precision": 0.4286,
+          "recall": 0.75,
+          "f1": 0.5455,
+          "support": 4.0
+        },
+        "feedback_complaint": {
+          "precision": 0.3731,
+          "recall": 0.9259,
+          "f1": 0.5319,
+          "support": 27.0
+        },
+        "how_to": {
+          "precision": 1.0,
+          "recall": 0.2667,
+          "f1": 0.4211,
+          "support": 15.0
+        },
+        "other": {
+          "precision": 0.1111,
+          "recall": 0.2,
+          "f1": 0.1429,
+          "support": 5.0
+        },
+        "service_status": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 4.0
+        },
+        "technical_issue": {
+          "precision": 0.9238,
+          "recall": 0.6783,
+          "f1": 0.7823,
+          "support": 143.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          25,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          0,
+          4,
+          3,
+          0,
+          5
+        ],
+        [
+          2,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          40,
+          0,
+          5,
+          0,
+          97
+        ]
+      ],
+      "labels": [
+        "account_access",
+        "billing_purchase",
+        "feedback_complaint",
+        "how_to",
+        "other",
+        "service_status",
+        "technical_issue"
+      ],
+      "true_distribution": {
+        "technical_issue": 143,
+        "billing_purchase": 4,
+        "feedback_complaint": 27,
+        "how_to": 15,
+        "other": 5,
+        "account_access": 2,
+        "service_status": 4
+      },
+      "pred_distribution": {
+        "feedback_complaint": 67,
+        "technical_issue": 105,
+        "account_access": 7,
+        "billing_purchase": 7,
+        "other": 9,
+        "service_status": 1,
+        "how_to": 4
+      }
+    },
+    "escalation": {
+      "accuracy": 0.5,
+      "precision": 0.3421,
+      "recall": 0.6094,
+      "f1": 0.4382,
+      "tp": 39,
+      "fp": 75,
+      "fn": 25,
+      "tn": 61,
+      "true_escalation_rate": 0.32,
+      "predicted_escalation_rate": 0.57
+    },
+    "reply_quality": {
+      "helpfulness": {
+        "mean": 4.33,
+        "std": 0.75
+      },
+      "tone": {
+        "mean": 4.43,
+        "std": 0.76
+      },
+      "groundedness": {
+        "mean": 4.77,
+        "std": 0.56
+      },
+      "overall": {
+        "mean": 4.51,
+        "std": 0.63
+      },
+      "n_judged": 30
+    }
+  },
+  "failure_analysis": [
+    {
+      "query": "there\u2019s another glitch\ud83d\ude43\ud83d\ude43\ud83d\ude43whenever I try to type \u201cit\u201d autocorrect changes to I.t \ud83d\ude43\ud83d\ude43\ud83d\ude43next glitch I want a new phone\ud83d\ude43\ud83d\ude43\ud83d\ude43\ud83d\ude43",
+      "error_types": [
+        "Intent: predicted 'how_to' vs actual 'technical_issue'",
+        "Escalation: over-escalated"
+      ],
+      "error_score": 4,
+      "prediction_intent": "how_to",
+      "golden_intent": "technical_issue"
+    },
+    {
+      "query": "Hate restarting my phone. I have to sit through fifty-something unread text alerts every time I restart it. Fix this, .",
+      "error_types": [
+        "Intent: predicted 'technical_issue' vs actual 'feedback_complaint'",
+        "Escalation: over-escalated"
+      ],
+      "error_score": 4,
+      "prediction_intent": "technical_issue",
+      "golden_intent": "feedback_complaint"
+    },
+    {
+      "query": "when will the auto-capitalizing \u201cIt\u201d and I\ufe0f that changed to \u201cA ?\u201d be fixed?! This is super annoying!",
+      "error_types": [
+        "Intent: predicted 'how_to' vs actual 'technical_issue'",
+        "Escalation: over-escalated"
+      ],
+      "error_score": 4,
+      "prediction_intent": "how_to",
+      "golden_intent": "technical_issue"
+    },
+    {
+      "query": "is this real or a scam? Why did it come up on my iPhone? [URL]",
+      "error_types": [
+        "Intent: predicted 'feedback_complaint' vs actual 'other'",
+        "Escalation: over-escalated"
+      ],
+      "error_score": 4,
+      "prediction_intent": "feedback_complaint",
+      "golden_intent": "other"
+    },
+    {
+      "query": "You know y\u2019all need to get this keyboard together! It\u2019s like reading hieroglyphics sometimes with this glitch! \ud83d\udc4a\ud83c\udffe",
+      "error_types": [
+        "Intent: predicted 'feedback_complaint' vs actual 'technical_issue'",
+        "Escalation: over-escalated"
+      ],
+      "error_score": 4,
+      "prediction_intent": "feedback_complaint",
+      "golden_intent": "technical_issue"
+    }
+  ]
+}
