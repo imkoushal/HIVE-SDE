@@ -16,7 +16,7 @@ An AI support agent for **AppleSupport** on Twitter that classifies intents, dra
 
 ```bash
 # 1. Clone & install
-git clone <your-repo-url> && cd hive-sde
+git clone https://github.com/imkoushal/HIVE-SDE.git && cd HIVE-SDE
 py -m pip install -r requirements.txt
 
 # 2. Add your API key (one of the three options)
